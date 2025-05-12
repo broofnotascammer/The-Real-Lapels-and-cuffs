@@ -1,95 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Lapels & Cuffs Men's Bespoke</title>
-<style>
-  body {
-    color: red;
-    margin-left: 20px;
-    margin-top: 0px;
-    font-family: 'Snell Roundhand', cursive;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  h1 {
-    font-size: 100px;
-    font-weight: bold;
-    margin-bottom: 30px;
-  }
-  /* Style for the button to cover top in one line */
-  button {
-    display: block;
-    width: 1000%;
-    box-sizing: border-box;
-    font-family: cursive;
-    padding: 0px 0;
-    font-size: 40px;
-    cursor: pointer;
-    border: none;
-    border-radius: 10px;
-    background-color: navy;
-    color: #B76E79;
-  }
-  button:hover {
-    background-color: darkgray;
-    color: white;
-  }
-
-  /* Styles for the continuous scrolling photos */
-  .scrolling-wrapper {
-    overflow: hidden;
-    width: 100%;
-    height: 220px; /* height based on images plus margin */
-    margin-top: 50px; /* space above the scroll section */
-  }
-
-  .scrolling {
-    display: flex;
-    width: calc(200px * 12); /* 6 images duplicated for seamless scroll */
-    animation: scroll 20s linear infinite;
-  }
-
-  .scrolling img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    margin-right: 10px;
-  }
-
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Continuous Image Scroll</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fff;
     }
-    100% {
-      transform: translateX(-600px); /* move by width of 6 images + margins */
+
+    .scrolling-wrapper {
+      overflow: hidden;
+      width: 100%;
+      height: 200px;
+      position: relative;
     }
-  }
-</style>
+
+    .scrolling {
+      display: flex;
+      width: calc(200px * 12);
+      animation: scroll 20s linear infinite;
+    }
+
+    .scrolling img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      margin-right: 10px;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-1260px); /* Adjusted for 6 images + 10px margin */
+      }
+    }
+  </style>
 </head>
 <body>
-<button class="button" onclick="goToWebsite()">Lapels & Cuffs</button>
 
-<!-- Continuous scrolling photos section -->
+<h2>Continuous Scrolling Photos</h2>
+
 <div class="scrolling-wrapper">
   <div class="scrolling">
-    <!-- Original 6 images with filenames -->
-    <img src="image1.jpg" alt="Photo 1" />
-    <img src="image2.jpg" alt="Photo 2" />
-    <img src="image3.jpg" alt="Photo 3" />
-    <img src="image4.jpg" alt="Photo 4" />
-    <img src="image5.jpg" alt="Photo 5" />
-    <img src="image6.jpg" alt="Photo 6" />
+    <!-- First set of 6 images -->
+    <img src="image1.jpeg" alt="Photo 1" />
+    <img src="image2.jpeg" alt="Photo 2" />
+    <img src="image3.jpeg" alt="Photo 3" />
+    <img src="image4.jpeg" alt="Photo 4" />
+    <img src="image5.jpeg" alt="Photo 5" />
+    <img src="image6.jpeg" alt="Photo 6" />
+
+    <!-- Duplicate for seamless scroll -->
+    <img src="image1.jpeg" alt="Photo 1" />
+    <img src="image2.jpeg" alt="Photo 2" />
+    <img src="image3.jpeg" alt="Photo 3" />
+    <img src="image4.jpeg" alt="Photo 4" />
+    <img src="image5.jpeg" alt="Photo 5" />
+    <img src="image6.jpeg" alt="Photo 6" />
   </div>
 </div>
-
-<script>
-  function goToWebsite() {
-    window.location.href = 'https://your-actual-url.com'; // Replace with your actual URL
-  }
-</script>
 
 </body>
 </html>
