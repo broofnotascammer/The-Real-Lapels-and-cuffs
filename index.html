@@ -1,69 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Continuous Image Scroll</title>
-  <style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lapels & Cuffs Men's Bespoke</title>
+<style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #fff;
+        margin-left: 20px;
+        margin-top: 0px;
+        font-family: 'Snell Roundhand', cursive; /* Fallback to cursive if the font is not available */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center horizontally */
+        overflow-x: hidden; /* Prevent horizontal scrollbar */
+    }
+    h1 {
+        font-size: 100px; /* Large heading size */
+        font-weight: bold; /* Bold text */
+        margin-bottom: 30px;
+    }
+    button {
+        display: block; /* Make button occupy full width */
+        width: 100%; /* Cover the entire width */
+        box-sizing: border-box; /* Include padding in width */
+        font-family: cursive;
+        padding: 15px 0; /* Vertical padding, no horizontal padding to stretch full width */
+        font-size: 40px; /* Large button text */
+        cursor: pointer; /* Pointer cursor on hover */
+        border: none; /* Remove border */
+        border-radius: 10px; /* Rounded corners */
+        background-color: navy; /* Background color */
+        color: #B76E79; /* Rose Gold text */
+        transition: background-color 0.3s, color 0.3s;
+    }
+    button:hover {
+        background-color: darkgray; /* Change background on hover */
+        color: white; /* Optional: change text color on hover */
     }
 
-    .scrolling-wrapper {
-      overflow: hidden;
-      width: 100%;
-      height: 200px;
-      position: relative;
+    /* Styles for the scrolling images container */
+    .scroll-container {
+        width: 1000%;
+        overflow: hidden;
+        white-space: nowrap;
+        box-sizing: border-box;
+        margin-top: 50px;
+        border: 2px solid #ccc; /* Optional border for visibility */
+        height: 200px; /* Adjust height as needed */
+        position: relative;
     }
 
-    .scrolling {
-      display: flex;
-      width: calc(200px * 12);
-      animation: scroll 20s linear infinite;
+    .scroll-images {
+        display: inline-block;
+        white-space: nowrap;
+        animation: scrollLeft 20s linear infinite;
     }
 
-    .scrolling img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      margin-right: 10px;
+    /* Animate the images to scroll left */
+    @keyframes scrollLeft {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
     }
 
-    @keyframes scroll {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-1260px); /* Adjusted for 6 images + 10px margin */
-      }
+    /* Style for individual images */
+    .scroll-images img {
+        height: 200px; /* Same as container height */
+        margin-right: 10px; /* Spacing between images */
+        display: inline-block;
     }
-  </style>
+</style>
 </head>
 <body>
+<button class="button" onclick="goToWebsite()">Lapels & Cuffs</button>
 
-<h2>Continuous Scrolling Photos</h2>
-
-<div class="scrolling-wrapper">
-  <div class="scrolling">
-    <!-- First set of 6 images -->
-    <img src="image1.jpeg" alt="Photo 1" />
-    <img src="image2.jpeg" alt="Photo 2" />
-    <img src="image3.jpeg" alt="Photo 3" />
-    <img src="image4.jpeg" alt="Photo 4" />
-    <img src="image5.jpeg" alt="Photo 5" />
-    <img src="image6.jpeg" alt="Photo 6" />
-
-    <!-- Duplicate for seamless scroll -->
-    <img src="image1.jpeg" alt="Photo 1" />
-    <img src="image2.jpeg" alt="Photo 2" />
-    <img src="image3.jpeg" alt="Photo 3" />
-    <img src="image4.jpeg" alt="Photo 4" />
-    <img src="image5.jpeg" alt="Photo 5" />
-    <img src="image6.jpeg" alt="Photo 6" />
-  </div>
+<!-- Infinite scrolling images container -->
+<div class="scroll-container">
+    <div class="scroll-images" id="scrollImages">
+        <!-- Images will be duplicated here for seamless scrolling -->
+        <img src="Image1" alt="Image 1" />
+        <img src="Image2" alt="Image 2" />
+        <img src="Image3" alt="Image 3" />
+        <img src="Image4" alt="Image 4" />
+        <!-- Add more images as needed -->
+        <!-- Duplicate images for seamless loop -->
+        <img src="Image1" alt="Image 1" />
+        <img src="Image2" alt="Image 2" />
+        <img src="Image3" alt="Image 3" />
+        <img src="Image4" alt="Image 4" />
+    </div>
 </div>
 
+<script>
+  function goToWebsite() {
+    window.location.href = 'https://www.example.com'; // Replace with your website URL
+  }
+</script>
 </body>
 </html>
